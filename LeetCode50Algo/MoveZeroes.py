@@ -10,6 +10,8 @@ Step 7: Now need to replace the remaining j - len(arr) as zero
 Step 8: loop through num with range(j - len(arr))
 Step 9: arr[num] = 0 # will moved zero to the right side
 Step 10: End
+
+In short, one variable will be iterated by one only if that is non zero, for swaping the data simultaneously and keep track of non-zero total length to add the remaining with zeroes. 
 """
 class Solution:
     def moveZeroes(self, arr):
