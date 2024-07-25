@@ -5,10 +5,8 @@ import logging
 logging.basicConfig(filename="/workspaces/practise/RandomCodeFF/LogaboutLog.log",
                     format='%(asctime)s %(message)s',
                     filemode='a')
- 
 # Creating an object
 logger = logging.getLogger()
- 
 # Setting the threshold of logger to DEBUG
 logger.setLevel(logging.DEBUG)
 
