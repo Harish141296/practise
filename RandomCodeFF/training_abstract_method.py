@@ -22,7 +22,7 @@ class Square(Shape):
 try:
     shape = Shape()
 except:
-    circle = Circle(5)
+    circle = Circle(5).area()
     print(circle.area()) # Output: 78.5
 
     square = Square(4)
