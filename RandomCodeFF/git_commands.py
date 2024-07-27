@@ -1,4 +1,5 @@
 """
+git branch 
 git checkout -b new-branch
 # Make changes, then:
 git add .
