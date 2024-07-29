@@ -5,5 +5,5 @@ from django.http import HttpResponse
 
 def main_view(request):
     details = {'name': 'Jerry',
-               'profession': 'Senior Developer'}
+               'profession': 'Senior'}
     return render(request, 'views/main.html', context = details)
