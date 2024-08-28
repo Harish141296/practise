@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os 
+
+load_dotenv('/Users/harishparamathmananda/Documents/git/backend/.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -94,8 +97,8 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'harish@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = os.getenv('USERNAME')
+EMAIL_HOST_PASSWORD = os.getenv('PASSWORD')
 EMAIL_USE_TLS = True
 
 # Password validation
@@ -141,7 +144,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':(
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
 }
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT',),
@@ -160,7 +163,10 @@ DJOSER = {
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL':True,
     'SERIALIZERS':{
-        
+        'user_create': 'accounts.serializers.UserCreateSerializer',
+        'user': 'accounts.serializers.UserCreateSerializer',
+        'user_delete': 'djoser.serializers.UserDeleteSerializer',
+
     }
 }
 # Default primary key field type
